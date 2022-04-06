@@ -3,8 +3,9 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
 import MinhaLista from './Lista'
+import Pastelaria from './pastelaria'
+import Calculadora from './calculadora'
 
 
 function HomeScreen({ navigation }) {
@@ -26,14 +27,17 @@ function NotificationsScreen({ navigation }) {
   );
 }
 
-function ExemploAulaScreen({ navigation }) {
+function CalculadoraScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Olá Turma</Text>
-    </View>
+    <Calculadora></Calculadora>
   );
 }
 
+function PastelariaScreen({ navigation }) {
+  return (
+    <Pastelaria></Pastelaria>
+  );
+}
 
 function ListaScreen({ navigation }) {
   return (
@@ -50,7 +54,8 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        <Drawer.Screen name="Menu Exemplo" component={ExemploAulaScreen} />
+        <Drawer.Screen name="Calculadora" component={CalculadoraScreen} />
+        <Drawer.Screen name="Pastelaria" component={PastelariaScreen} />
         <Drawer.Screen name="Abrir Lista" component={ListaScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
